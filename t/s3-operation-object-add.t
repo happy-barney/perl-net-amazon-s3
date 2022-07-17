@@ -144,12 +144,12 @@ sub expect_operation_object_add_scalar {
 		implementations => +{ @_ },
 		expect_operation => 'Net::Amazon::S3::Operation::Object::Add',
 		expect_request_method => 'PUT',
-		expect_request_uri    => "https://bucket-name.${ \ default_hostname }/some-key",
+		expect_request_uri    => default_object_uri,
 		plan => {
 			"add object with value from scalar" => {
 				act_arguments => [
-					bucket      => 'bucket-name',
-					key         => 'some-key',
+					bucket      => default_bucket_name,
+					key         => default_object_name,
 					value       => 'baz-€',
 					acl         => 'private',
 					encryption  => 'object-encryption',
@@ -165,7 +165,7 @@ sub expect_operation_object_add_scalar {
 				],
 				expect_request => methods (
 					bucket      => expectation_bucket ('bucket-name'),
-					key         => 'some-key',
+					key         => default_object_name,
 					value       => 'baz-€',
 					acl         => expectation_canned_acl ('private'),
 					encryption  => 'object-encryption',
@@ -189,12 +189,12 @@ sub expect_operation_object_add_file {
 		implementations => +{ @_ },
 		expect_operation => 'Net::Amazon::S3::Operation::Object::Add',
 		expect_request_method => 'PUT',
-		expect_request_uri    => "https://bucket-name.${ \ default_hostname }/some-key",
+		expect_request_uri    => default_object_uri,
 		plan => {
 			"add object with value from file" => {
 				act_arguments => [
-					bucket      => 'bucket-name',
-					key         => 'some-key',
+					bucket      => default_bucket_name,
+					key         => default_object_name,
 					value       => "$FindBin::Bin/data/s3-operation-object-add.txt",
 					acl         => 'private',
 					encryption  => 'object-encryption',
@@ -210,7 +210,7 @@ sub expect_operation_object_add_file {
 				],
 				expect_request => methods (
 					bucket      => expectation_bucket ('bucket-name'),
-					key         => 'some-key',
+					key         => default_object_name,
 					value       => expect_coderef,
 					acl         => expectation_canned_acl ('private'),
 					encryption  => 'object-encryption',
@@ -235,12 +235,12 @@ sub expect_operation_object_client_add_scalar {
 		implementations => +{ @_ },
 		expect_operation => 'Net::Amazon::S3::Operation::Object::Add',
 		expect_request_method => 'PUT',
-		expect_request_uri    => "https://bucket-name.${ \ default_hostname }/some-key",
+		expect_request_uri    => default_object_uri,
 		plan => {
 			"add object with value from scalar" => {
 				act_arguments => [
-					bucket      => 'bucket-name',
-					key         => 'some-key',
+					bucket      => default_bucket_name,
+					key         => default_object_name,
 					value       => 'foo-bar-baz',
 					acl         => 'private',
 					encryption  => 'object-encryption',
@@ -256,7 +256,7 @@ sub expect_operation_object_client_add_scalar {
 				],
 				expect_request => methods (
 					bucket      => expectation_bucket ('bucket-name'),
-					key         => 'some-key',
+					key         => default_object_name,
 					value       => 'foo-bar-baz',
 					acl         => expectation_canned_acl ('private'),
 					encryption  => 'object-encryption',
@@ -281,12 +281,12 @@ sub expect_operation_object_client_add_file {
 		implementations => +{ @_ },
 		expect_operation => 'Net::Amazon::S3::Operation::Object::Add',
 		expect_request_method => 'PUT',
-		expect_request_uri    => "https://bucket-name.${ \ default_hostname }/some-key",
+		expect_request_uri    => default_object_uri,
 		plan => {
 			"add object with value from scalar" => {
 				act_arguments => [
-					bucket      => 'bucket-name',
-					key         => 'some-key',
+					bucket      => default_bucket_name,
+					key         => default_object_name,
 					value       => "$FindBin::Bin/data/s3-operation-object-add.txt",
 					acl         => 'private',
 					encryption  => 'object-encryption',
@@ -302,7 +302,7 @@ sub expect_operation_object_client_add_file {
 				],
 				expect_request => methods (
 					bucket      => expectation_bucket ('bucket-name'),
-					key         => 'some-key',
+					key         => default_object_name,
 					value       => expect_coderef,
 					acl         => expectation_canned_acl ('private'),
 					encryption  => 'object-encryption',
