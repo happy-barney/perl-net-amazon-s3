@@ -56,10 +56,6 @@ sub expect_operation_object_head_api {
 					bucket => default_bucket_name,
 					key    => default_object_name,
 				],
-				expect_request => methods (
-					bucket      => expectation_bucket ('bucket-name'),
-					key         => default_object_name,
-				),
 				expect_request_headers => {
 					content_length => 0,
 				},

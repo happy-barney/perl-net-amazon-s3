@@ -163,13 +163,6 @@ sub expect_operation_object_add_scalar {
 						foo => 'foo-value',
 					},
 				],
-				expect_request => methods (
-					bucket      => expectation_bucket ('bucket-name'),
-					key         => default_object_name,
-					value       => 'baz-€',
-					acl         => expectation_canned_acl ('private'),
-					encryption  => 'object-encryption',
-				),
 				expect_request_headers => {
 					expires             => 2_345_567_890,
 					content_encoding    => 'content-encoding',
@@ -208,13 +201,6 @@ sub expect_operation_object_add_file {
 						foo => 'foo-value',
 					},
 				],
-				expect_request => methods (
-					bucket      => expectation_bucket ('bucket-name'),
-					key         => default_object_name,
-					value       => expect_coderef,
-					acl         => expectation_canned_acl ('private'),
-					encryption  => 'object-encryption',
-				),
 				expect_request_headers => {
 					expires             => 2_345_567_890,
 					content_encoding    => 'content-encoding',
@@ -254,13 +240,6 @@ sub expect_operation_object_client_add_scalar {
 						foo => 'foo-value',
 					},
 				],
-				expect_request => methods (
-					bucket      => expectation_bucket ('bucket-name'),
-					key         => default_object_name,
-					value       => 'foo-bar-baz',
-					acl         => expectation_canned_acl ('private'),
-					encryption  => 'object-encryption',
-				),
 				expect_request_headers => {
 					content_length      => 11,
 					content_type        => 'binary/octet-stream',
@@ -300,13 +279,6 @@ sub expect_operation_object_client_add_file {
 						foo => 'foo-value',
 					},
 				],
-				expect_request => methods (
-					bucket      => expectation_bucket ('bucket-name'),
-					key         => default_object_name,
-					value       => expect_coderef,
-					acl         => expectation_canned_acl ('private'),
-					encryption  => 'object-encryption',
-				),
 				expect_request_headers => {
 					content_length      => 72,
 					content_type        => 'binary/octet-stream',
