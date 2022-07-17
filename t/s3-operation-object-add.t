@@ -143,6 +143,8 @@ sub expect_operation_object_add_scalar {
 	expect_operation_plan
 		implementations => +{ @_ },
 		expect_operation => 'Net::Amazon::S3::Operation::Object::Add',
+		expect_request_method => 'PUT',
+		expect_request_uri    => "https://bucket-name.${ \ default_hostname }/some-key",
 		plan => {
 			"add object with value from scalar" => {
 				act_arguments => [
@@ -184,6 +186,8 @@ sub expect_operation_object_add_file {
 	expect_operation_plan
 		implementations => +{ @_ },
 		expect_operation => 'Net::Amazon::S3::Operation::Object::Add',
+		expect_request_method => 'PUT',
+		expect_request_uri    => "https://bucket-name.${ \ default_hostname }/some-key",
 		plan => {
 			"add object with value from file" => {
 				act_arguments => [
@@ -226,6 +230,8 @@ sub expect_operation_object_client_add_scalar {
 	expect_operation_plan
 		implementations => +{ @_ },
 		expect_operation => 'Net::Amazon::S3::Operation::Object::Add',
+		expect_request_method => 'PUT',
+		expect_request_uri    => "https://bucket-name.${ \ default_hostname }/some-key",
 		plan => {
 			"add object with value from scalar" => {
 				act_arguments => [
@@ -268,6 +274,8 @@ sub expect_operation_object_client_add_file {
 	expect_operation_plan
 		implementations => +{ @_ },
 		expect_operation => 'Net::Amazon::S3::Operation::Object::Add',
+		expect_request_method => 'PUT',
+		expect_request_uri    => "https://bucket-name.${ \ default_hostname }/some-key",
 		plan => {
 			"add object with value from scalar" => {
 				act_arguments => [
