@@ -149,7 +149,7 @@ sub expect_operation_object_add_scalar {
 					bucket      => 'bucket-name',
 					key         => 'some-key',
 					value       => 'foo-bar-baz',
-					acl         => 'object-acl',
+					acl         => 'private',
 					encryption  => 'object-encryption',
 					headers     => {
 						expires     => 2_345_567_890,
@@ -165,7 +165,7 @@ sub expect_operation_object_add_scalar {
 					bucket      => 'bucket-name',
 					key         => 'some-key',
 					value       => 'foo-bar-baz',
-					acl         => 'object-acl',
+					acl         => 'private',
 					encryption  => 'object-encryption',
 					headers     => {
 						expires     => 2_345_567_890,
