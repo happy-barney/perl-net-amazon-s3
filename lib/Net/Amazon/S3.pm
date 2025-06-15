@@ -513,7 +513,7 @@ in buckets. Bucket names are global.
 Note: This is the legacy interface, please check out
 L<Net::Amazon::S3::Client> instead.
 
-Development of this code happens here: https://github.com/rustyconover/net-amazon-s3
+Development of this code happens here: https://github.com/happy-barney/perl-net-amazon-s3
 
 =head2 Bucket names with dots, HTTPS, and Signature V4
 
